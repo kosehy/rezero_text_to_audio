@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from generate_audio import *
 
-episode = "169"
+episode = "174"
 dirpath = episode + "/"
 output_file = "[txt]" + episode + "_" + "output.mp3"
 
@@ -47,7 +47,6 @@ class BrickSetSpider(scrapy.Spider):
                 f.write(text[i])
                 f.write("\n")
 
-        raw = []
         txt_filename = episode + '/' + '[raw]' + episode + '.txt'
         input = open(txt_filename, "r", encoding='utf8')
         lines = input.readlines()
@@ -66,7 +65,7 @@ class BrickSetSpider(scrapy.Spider):
             tmp_filename = os.path.splitext(tmp)[0]
             base.append(int(tmp_filename))
         base.sort()
-        filenames.clear()        os.system(cmd)
+        filenames.clear()
         for i in base:
             filenames.append(str(i) + ".mp3")
         combined = AudioSegment.empty()
@@ -83,3 +82,4 @@ class BrickSetSpider(scrapy.Spider):
 
         cmd = "ffmpeg -i %s -filter:a \"atempo=1.25\" -vn %s.mp3" % (dirpath + output_file, "[txt]" + episode + "_output_1.25")
         shutil.copyfile("./" + episode + '/' + '[txt]' + episode + '.txt', "./" + '[txt]' + episode + '.txt')
+        os.system(cmd)
