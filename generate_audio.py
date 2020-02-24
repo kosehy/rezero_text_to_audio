@@ -49,6 +49,8 @@ def concat_audio():
         audio_filename = AudioSegment.from_mp3(dirpath + filename)
         combined += audio_filename
         print(filename)
+    audio_filename = AudioSegment.from_mp3("empty.mp3")
+    combined += audio_filename
     combined.export(dirpath + output_file, format="mp3")
 
 def speedup_audio():

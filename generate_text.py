@@ -1,19 +1,19 @@
 import scrapy
+import os
+import shutil
 import sys
 from pathlib import Path
 from generate_audio import *
 
-# episode = sys.argv[2]
-episode = "176"
+episode = "169"
 dirpath = episode + "/"
-output_file = episode + "_" + "output.mp3"
+output_file = "[txt]" + episode + "_" + "output.mp3"
+
 class BrickSetSpider(scrapy.Spider):
     name = "brickset_spider"
     start_urls = ['http://ncode.syosetu.com/n2267be/' + episode + '/']
     Path("./" + episode).mkdir(exist_ok=True)
-
     def parse(selfself, response):
-        tmp = []
         tmp = response.xpath("//p/text()").extract()
         print(len(tmp))
         k = 0
@@ -66,7 +66,7 @@ class BrickSetSpider(scrapy.Spider):
             tmp_filename = os.path.splitext(tmp)[0]
             base.append(int(tmp_filename))
         base.sort()
-        filenames.clear()
+        filenames.clear()        os.system(cmd)
         for i in base:
             filenames.append(str(i) + ".mp3")
         combined = AudioSegment.empty()
@@ -74,7 +74,12 @@ class BrickSetSpider(scrapy.Spider):
             audio_filename = AudioSegment.from_mp3(dirpath + filename)
             combined += audio_filename
             print(filename)
+        audio_filename = AudioSegment.from_mp3("empty.mp3")
+        combined += audio_filename
+        combined += audio_filename
+        combined += audio_filename
+        combined += audio_filename
         combined.export(dirpath + output_file, format="mp3")
 
-        cmd = "ffmpeg -i %s -filter:a \"atempo=1.25\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.25")
-        os.system(cmd)
+        cmd = "ffmpeg -i %s -filter:a \"atempo=1.25\" -vn %s.mp3" % (dirpath + output_file, "[txt]" + episode + "_output_1.25")
+        shutil.copyfile("./" + episode + '/' + '[txt]' + episode + '.txt', "./" + '[txt]' + episode + '.txt')
