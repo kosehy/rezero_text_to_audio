@@ -4,27 +4,27 @@ from pydub import AudioSegment
 import os
 from gtts import gTTS
 
-episode = '172'
-dirpath = episode + "/"
-output_file = episode + "_" + "output.mp3"
-def generate_audio():
+def generate_audio(episode, dirpath):
     """
     generate audio file from google tts
     :return:
     """
     raw = []
-    txt_filename = episode + '/' + '[raw]' + episode + '.txt'
+    txt_filename = dirpath + '[raw]' + episode + '.txt'
     input = open(txt_filename, "r", encoding='utf8')
     lines = input.readlines()
     for i in range(len(lines)):
         print("{}: {}".format(i, lines[i]))
-        tts = gTTS(lines[i], lang='ja')
-        tts.save(episode + '/' + str(i) + ".mp3")
+        if lines[i] and lines[i].strip():
+            tts = gTTS(lines[i], lang='ja')
+            tts.save(dirpath + str(i) + ".mp3")
+        else:
+            continue
     last_index = len(lines) - 1
     tts = gTTS(lines[last_index], lang='ja')
-    tts.save(episode + '/' + str(last_index) + ".mp3")
+    tts.save(dirpath + str(last_index) + ".mp3")
 
-def concat_audio():
+def concat_audio(dirpath, output_file):
     """
     concat whole audio files to one output audio file
     :return:
@@ -53,6 +53,16 @@ def concat_audio():
     combined += audio_filename
     combined.export(dirpath + output_file, format="mp3")
 
-def speedup_audio():
+def speedup_audio(episode, dirpath, output_file):
     cmd = "ffmpeg -i %s -filter:a \"atempo=1.25\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.25")
     os.system(cmd)
+
+
+for i in range(176, 200):
+    episode = str(i)
+    dirpath = './text/' + episode + "/"
+    output_file = episode + "_output.mp3"
+
+    generate_audio(episode, dirpath)
+    concat_audio(dirpath, output_file)
+    speedup_audio(episode, dirpath, output_file)
