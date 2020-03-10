@@ -7,19 +7,18 @@ from pathlib import Path
 import re
 from generate_audio import *
 
-episode = "100"
+episode = "2"
 dirpath = episode + "/"
 output_file = "[txt]" + episode + "_" + "output.mp3"
 
 class BrickSetSpider(scrapy.Spider):
     name = "brickset_spider"
     start_urls = ['http://ncode.syosetu.com/n2267be/' + episode + '/']
+    base_urls = 'http://ncode.syosetu.com/n2267be/'
     Path("./" + episode).mkdir(exist_ok=True)
-    def parse(selfself, response):
+    def parse(self, response):
         next_episode_str = response.xpath(
             '//div[contains(@class, "novel_bn")]').extract_first()
-            # '//div[contains(@class, "novel_bn")]/a/@href').extract_first()[9:]
-        # print(next_episode)
         check = "前"
         k = 0
         for i in range(len(next_episode_str)):
@@ -28,40 +27,43 @@ class BrickSetSpider(scrapy.Spider):
         next_episode_str = next_episode_str[k + 6:]
         r = next_episode_str[18:]
         next_episode = ''.join(x for x in r if x.isdigit())
-        print(next_episode)
-        # tmp = response.xpath("//p/text()").extract()
-        # print(len(tmp))
-        # k = 0
-        # check = "第"
-        # for i in range(len(tmp)):
-        #     if check in tmp[i][0]:
-        #         k = i
-        # raw = []
-        # for i in range(k, len(tmp)):
-        #     raw.append(tmp[i])
-        #
-        # text = []
-        # check_script = "「"
-        # for i in range(k, len(tmp)):
-        #     if check_script in tmp[i][0]:
-        #         text.append("")
-        #         text.append(tmp[i])
-        #         text.append("")
-        #     else:
-        #         text.append(tmp[i])
-        #
-        # raw_filename = episode + '/' + '[raw]' + episode + '.txt'
-        # with open(raw_filename, 'w', encoding='utf8') as f:
-        #     for i in range(len(raw)):
-        #         print("{}: {}".format(i, raw[i]))
-        #         f.write(raw[i])
-        #         f.write("\n")
-        # txt_filename = episode + '/' + '[txt]' + episode + '.txt'
-        # with open(txt_filename, 'w', encoding='utf8') as f:
-        #     for i in range(len(text)):
-        #         f.write(text[i])
-        #         f.write("\n")
-        #
+        episode = int(next_episode) - 1
+        print(episode)
+        tmp = response.xpath("//p/text()").extract()
+        print(len(tmp))
+        k = 0
+        check = "第"
+        for i in range(len(tmp)):
+            if check in tmp[i][0]:
+                k = i
+        raw = []
+        for i in range(k, len(tmp)):
+            raw.append(tmp[i])
+
+        text = []
+        check_script = "「"
+        for i in range(k, len(tmp)):
+            if check_script in tmp[i][0]:
+                text.append("")
+                text.append(tmp[i])
+                text.append("")
+            else:
+                text.append(tmp[i])
+
+        raw_filename = str(episode) + '/' + '[raw]' + str(episode) + '.txt'
+        with open(raw_filename, 'w', encoding='utf8') as f:
+            for i in range(len(raw)):
+                print("{}: {}".format(i, raw[i]))
+                f.write(raw[i])
+                f.write("\n")
+        txt_filename = str(episode) + '/' + '[txt]' + str(episode) + '.txt'
+        with open(txt_filename, 'w', encoding='utf8') as f:
+            for i in range(len(text)):
+                f.write(text[i])
+                f.write("\n")
+
+        next_page_url = self.base_urls + next_episode + '/'
+        yield scrapy.Request(next_page_url, callback=self.parse)
         # txt_filename = episode + '/' + '[raw]' + episode + '.txt'
         # input = open(txt_filename, "r", encoding='utf8')
         # lines = input.readlines()
