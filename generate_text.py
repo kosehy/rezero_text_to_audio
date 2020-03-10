@@ -7,16 +7,20 @@ from pathlib import Path
 import re
 from generate_audio import *
 
-episode = "2"
+episode = "490"
 dirpath = episode + "/"
 output_file = "[txt]" + episode + "_" + "output.mp3"
 
+Path("./text").mkdir(exist_ok=True)
+Path("./text/" + episode).mkdir(exist_ok=True)
 class BrickSetSpider(scrapy.Spider):
     name = "brickset_spider"
     start_urls = ['http://ncode.syosetu.com/n2267be/' + episode + '/']
     base_urls = 'http://ncode.syosetu.com/n2267be/'
-    Path("./" + episode).mkdir(exist_ok=True)
     def parse(self, response):
+        '''
+        get next episode variable
+        '''
         next_episode_str = response.xpath(
             '//div[contains(@class, "novel_bn")]').extract_first()
         check = "前"
@@ -28,7 +32,11 @@ class BrickSetSpider(scrapy.Spider):
         r = next_episode_str[18:]
         next_episode = ''.join(x for x in r if x.isdigit())
         episode = int(next_episode) - 1
-        print(episode)
+        print("episode: {}".format(episode))
+        Path("./text/" + str(episode)).mkdir(exist_ok=True)
+        '''
+        extract text file from webpage
+        '''
         tmp = response.xpath("//p/text()").extract()
         print(len(tmp))
         k = 0
@@ -50,13 +58,15 @@ class BrickSetSpider(scrapy.Spider):
             else:
                 text.append(tmp[i])
 
-        raw_filename = str(episode) + '/' + '[raw]' + str(episode) + '.txt'
+        raw_filename = 'text/' + str(episode) + '/' + '[raw]' + str(episode) + '.txt'
+        print("raw_filename: {}".format(raw_filename))
         with open(raw_filename, 'w', encoding='utf8') as f:
             for i in range(len(raw)):
                 print("{}: {}".format(i, raw[i]))
                 f.write(raw[i])
                 f.write("\n")
-        txt_filename = str(episode) + '/' + '[txt]' + str(episode) + '.txt'
+        txt_filename = 'text/' + str(episode) + '/' + '[txt]' + str(episode) + '.txt'
+        print("txt_filename: {}".format(txt_filename))
         with open(txt_filename, 'w', encoding='utf8') as f:
             for i in range(len(text)):
                 f.write(text[i])
