@@ -54,7 +54,13 @@ For instructions and/or greater detail refer to the project [pdf][pdf]
 
 ## Credits  
 
-Some frameworks and libraries that were helpful with testing.   
+Some frameworks and libraries that were helpful with testing are listed below.
+https://pypi.org/project/gTTS/
+https://letslearnabout.net/tutorial/scrapy-tutorial/python-scrapy-tutorial-for-beginners-01-creating-your-first-spider/
+https://github.com/programmer-blog/join_wav_audio_files_using_python/blob/master/join_wav_files.py
+https://trac.ffmpeg.org/wiki/Concatenate
+https://youtu.be/jdRzQ-o_7cI
+https://trac.ffmpeg.org/wiki/How%20to%20speed%20up%20/%20slow%20down%20a%20video
 
 ## Disclaimer
 
