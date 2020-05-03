@@ -35,6 +35,7 @@ Make sure you have the needed [dependencies](#dependencies) before proceeding.
 For instructions and/or greater detail refer to the project [pdf][pdf]
 
 ## Mandatory part
+- [ ] Upload to Vogsphere a link to your public facing Github repository.
 - [ ] The project code should run without errors and perform an interesting or usefultask. It should handle bad input gracefully.
 - [ ] The user interaction part of your program should be well explained or easy tounderstand.
 - [ ] Your README should explain the purpose and/or use of the program, and includescreenshots of it running.
