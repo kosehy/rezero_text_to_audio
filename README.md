@@ -35,9 +35,21 @@ Make sure you have the needed [dependencies](#dependencies) before proceeding.
 For instructions and/or greater detail refer to the project [pdf][pdf]
 
 ## Mandatory part
-
+- [ ] The project code should run without errors and perform an interesting or usefultask. It should handle bad input gracefully.
+- [ ] The user interaction part of your program should be well explained or easy tounderstand.
+- [ ] Your README should explain the purpose and/or use of the program, and includescreenshots of it running.
+- [ ] Your README should contain full instructions for installing and running the pro-gram on a blank MacOS system.  Use a guest account on the HackHighSchoolcheck-in computers for testing.
+- [ ] Your Github repo should specify the license that clarifies what permissions you givefor others to modify and reuse your work.
+- [ ] There should be no unnecessary files in your Github repo that distract from thereal content, or any that reveal secrets such as API keys.
+- [ ] Each file containing code should start with a header block that introduces the originand purpose of the code.
+- [ ] Your code should be nicely formatted, and code/function/class/filenames shouldcontribute to its overall readability.
+- [ ] You should make multiple commits to your Github repository over the course ofthe project, and your commit messages should be dignified and descriptive.
+- [ ] You should work socially to some extent by discussing your project with othercadets, whether it be to ask for advice or to show off your work.
 ## Bonus part
-
+- [ ] Create a new git branch every time you start working on a new feature, and thenmerge it into the master branch when done.
+- [ ] Make the program look beautiful with great front-end design or terminal colors andformatting.
+- [ ] For maximum credit, add 5 additional "features" or improvements on top of thebare mininum functioning program.
+- [ ] Use the gaming computers at the back of Zone 3 to ensure that your setup instruc-tions also work on a guest account of a Windows operating system.
 ## Dependencies  
 * A C language compiler most common would be GCC or Clang.
 * These were written to run on Unix based systems, it would likely work on a windows machine too but is currently untested. 
