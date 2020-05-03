@@ -54,20 +54,17 @@ def concat_audio(dirpath, output_file):
     combined.export(dirpath + output_file, format="mp3")
 
 def speedup_audio(episode, dirpath, output_file):
-<<<<<<< HEAD
     cmd = "ffmpeg -i %s -filter:a \"atempo=1.35\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.35")
     os.system(cmd)
 
 
 for i in range(211, 250):
     print("index : {}".format(i))
-=======
     cmd = "ffmpeg -i %s -filter:a \"atempo=1.25\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.25")
     os.system(cmd)
 
 
 for i in range(176, 200):
->>>>>>> cee7c6ef7463787c7ab3f919c605dd5f92d1f288
     episode = str(i)
     dirpath = './text/' + episode + "/"
     output_file = episode + "_output.mp3"
