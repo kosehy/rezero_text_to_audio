@@ -29,11 +29,6 @@ def concat_audio(dirpath, output_file):
     concat whole audio files to one output audio file
     :return:
     """
-    """
-    ffmpeg -f concat -safe 0 -i <(for f in ./169/*.mp3; do echo "file '$PWD/$f'"; done) -c copy output.mp3
-    """
-    # cmd = "ffmpeg -f concat -safe 0 -i < for f in ./%s/*.mp3; do echo \"file '$PWD/$f'\" done -c copy output_%s.mp3" % (episode, episode)
-    # os.system(cmd)
     filenames = glob.glob(dirpath + "*.mp3")
     base = []
     for i in filenames:
@@ -57,14 +52,7 @@ def speedup_audio(episode, dirpath, output_file):
     cmd = "ffmpeg -i %s -filter:a \"atempo=1.35\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.35")
     os.system(cmd)
 
-
-for i in range(211, 250):
-    print("index : {}".format(i))
-    cmd = "ffmpeg -i %s -filter:a \"atempo=1.25\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.25")
-    os.system(cmd)
-
-
-for i in range(176, 200):
+for i in range(2, 3):
     episode = str(i)
     dirpath = './text/' + episode + "/"
     output_file = episode + "_output.mp3"
