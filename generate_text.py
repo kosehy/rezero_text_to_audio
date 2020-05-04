@@ -9,7 +9,6 @@ import re
 episode = "2"
 stop_episode = "4"
 dirpath = episode + "/"
-output_file = "[txt]" + episode + "_" + "output.mp3"
 
 Path("./text").mkdir(exist_ok=True)
 Path("./text/" + episode).mkdir(exist_ok=True)
