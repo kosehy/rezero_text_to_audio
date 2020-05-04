@@ -19,7 +19,7 @@ As a HackHighSchool mentor I need to establish expertise in the same language(in
 This project's mition is to build a side project of my own invention and make a nicely documented Github repository for my portfolio.
 
 #### About This Project
-Text to speech reader using Re:Zero novel content from http://ncode.syosetu.com/n2267be/
+Text to speech reader using Re:Zero novel content from http://ncode.syosetu.com/n2267be/  
 第一章１　　『ギザ十は使えない』 => [audio]
 
 #### About Me
