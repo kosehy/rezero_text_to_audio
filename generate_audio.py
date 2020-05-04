@@ -52,7 +52,10 @@ def speedup_audio(episode, dirpath, output_file):
     cmd = "ffmpeg -i %s -filter:a \"atempo=1.35\" -vn %s.mp3" % (dirpath + output_file, dirpath +  "[txt]" + episode + "_output_1.35")
     os.system(cmd)
 
-for i in range(2, 3):
+start_episode = 2
+end_episode = 3
+
+for i in range(start_episode, end_episode):
     episode = str(i)
     dirpath = './text/' + episode + "/"
     output_file = episode + "_output.mp3"
