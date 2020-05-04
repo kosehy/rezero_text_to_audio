@@ -17,20 +17,15 @@
 ## Introduction  
 As a HackHighSchool mentor I need to establish expertise in the same language(in this case, Python!) and or framework that I will be mentoring.
 This project's mition is to build a side project of my own invention and make a nicely documented Github repository for my portfolio.
-
 #### About This Project
 Text to speech reader using Re:Zero novel content from http://ncode.syosetu.com/n2267be/  
 第一章１　　『ギザ十は使えない』 => [audio]
-
 #### About Me
 Developer, Designer Be creative!! Currently Studying [@42SiliconValley][42]
-
 #### About 42  
 [42][42] is a free, non profit, project-based, peer-to-peer learning coding school. It originated in France and now has over 20 campuses all over the world. More information can be found [here][42] 
-
 ## Objective  
 To learn about making python program and using google tts to make speech file from text file.
-
 ## Instructions
 Make sure you have the needed [dependencies](#dependencies) before proceeding.
 For instructions and/or greater detail refer to the instruction.ipynb
@@ -47,16 +42,15 @@ For instructions and/or greater detail refer to the instruction.ipynb
 - [ ] You should make multiple commits to your Github repository over the course ofthe project, and your commit messages should be dignified and descriptive.
 - [ ] You should work socially to some extent by discussing your project with othercadets, whether it be to ask for advice or to show off your work.
 ## Bonus part
-- [ ] Create a new git branch every time you start working on a new feature, and thenmerge it into the master branch when done.
-- [ ] Make the program look beautiful with great front-end design or terminal colors andformatting.
-- [ ] For maximum credit, add 5 additional "features" or improvements on top of thebare mininum functioning program.
-- [ ] Use the gaming computers at the back of Zone 3 to ensure that your setup instruc-tions also work on a guest account of a Windows operating system.
+- [ ] Create a new git branch every time you start working on a new feature, and then merge it into the master branch when done.
+- [ ] Make the program look beautiful with great front-end design or terminal colors and formatting.
+- [ ] For maximum credit, add 5 additional "features" or improvements on top of the bare mininum functioning program.
+- [ ] Use the gaming computers at the back of Zone 3 to ensure that your setup instructions also work on a guest account of a Windows operating system.
 ## Dependencies  
 * Python3
 * scrapy
 * pydub
 * gtts
-
 ## Installation 
 For instructions and/or greater detail refer to the instruction.ipynb
 ## Usage  
