@@ -32,18 +32,17 @@ To learn about making python program and using google tts to make speech file fr
 
 ## Instructions
 Make sure you have the needed [dependencies](#dependencies) before proceeding.
-For instructions and/or greater detail refer to the project [pdf][pdf]
-
+For instructions and/or greater detail refer to the instruction.ipynb
 ## Mandatory part
 - [ ] Upload to Vogsphere a link to your public facing Github repository.
-- [ ] The project code should run without errors and perform an interesting or usefultask. It should handle bad input gracefully.
-- [ ] The user interaction part of your program should be well explained or easy tounderstand.
-- [ ] Your README should explain the purpose and/or use of the program, and includescreenshots of it running.
-- [ ] Your README should contain full instructions for installing and running the pro-gram on a blank MacOS system.  Use a guest account on the HackHighSchoolcheck-in computers for testing.
-- [ ] Your Github repo should specify the license that clarifies what permissions you givefor others to modify and reuse your work.
-- [ ] There should be no unnecessary files in your Github repo that distract from thereal content, or any that reveal secrets such as API keys.
-- [ ] Each file containing code should start with a header block that introduces the originand purpose of the code.
-- [ ] Your code should be nicely formatted, and code/function/class/filenames shouldcontribute to its overall readability.
+- [ ] The project code should run without errors and perform an interesting or useful task. It should handle bad input gracefully.
+- [ ] The user interaction part of your program should be well explained or easy to understand.
+- [ ] Your README should explain the purpose and/or use of the program, and include screenshots of it running.
+- [ ] Your README should contain full instructions for installing and running the pro-gram on a blank MacOS system.  Use a guest account on the HackHighSchool check-in computers for testing.
+- [ ] Your Github repo should specify the license that clarifies what permissions you give for others to modify and reuse your work.
+- [ ] There should be no unnecessary files in your Github repo that distract from the real content, or any that reveal secrets such as API keys.
+- [ ] Each file containing code should start with a header block that introduces the origin and purpose of the code.
+- [ ] Your code should be nicely formatted, and code/function/class/filenames should contribute to its overall readability.
 - [ ] You should make multiple commits to your Github repository over the course ofthe project, and your commit messages should be dignified and descriptive.
 - [ ] You should work socially to some extent by discussing your project with othercadets, whether it be to ask for advice or to show off your work.
 ## Bonus part
@@ -52,17 +51,20 @@ For instructions and/or greater detail refer to the project [pdf][pdf]
 - [ ] For maximum credit, add 5 additional "features" or improvements on top of thebare mininum functioning program.
 - [ ] Use the gaming computers at the back of Zone 3 to ensure that your setup instruc-tions also work on a guest account of a Windows operating system.
 ## Dependencies  
-* A C language compiler most common would be GCC or Clang.
-* These were written to run on Unix based systems, it would likely work on a windows machine too but is currently untested. 
+* Python3
+* scrapy
+* pydub
+* gtts
 
 ## Installation 
-
+For instructions and/or greater detail refer to the instruction.ipynb
 ## Usage  
-
+For instructions and/or greater detail refer to the instruction.ipynb
 ## Testing  
 
 ## Future 
-
+* Add other tts api such as microsoft, facebook, etc
+* Implement own tts engine to change the tts voice
 ## Mechanics  
 
 ## Credits  
