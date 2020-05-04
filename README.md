@@ -20,6 +20,7 @@ This project's mition is to build a side project of my own invention and make a 
 
 #### About This Project
 Text to speech reader using Re:Zero novel content from http://ncode.syosetu.com/n2267be/
+第一章１　　『ギザ十は使えない』 => [audio]
 
 #### About Me
 Developer, Designer Be creative!! Currently Studying [@42SiliconValley][42]
@@ -95,3 +96,5 @@ Enjoy!
 [pdf]: pdf
 
 [kosehy]: https://github.com/kosehy
+[audio]:  https://drive.google.com/file/d/1vFAeEFTuUrNiwPM49J-uz7ngcgffRuyR/view?usp=sharing
+[ch1_pic]: 1
