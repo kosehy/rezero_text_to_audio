@@ -18,6 +18,8 @@
 As a HackHighSchool mentor I need to establish expertise in the same language(in this case, Python!) and or framework that I will be mentoring.
 This project's mition is to build a side project of my own invention and make a nicely documented Github repository for my portfolio.
 #### About This Project
+What is TTS?
+TTS(Text to speech) is a form of speech synthesis that converts text into spoken voice output.
 Text to speech reader using Re:Zero novel content from http://ncode.syosetu.com/n2267be/  
 第一章１　　『ギザ十は使えない』 => [audio]
 #### About Me
